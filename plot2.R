@@ -1,6 +1,5 @@
-setwd('D:/Google drive/R/Exploratory data analysis/project 1')
 unzip('exdata_data_household_power_consumption.zip')
-fileName <- list.files(full.names = TRUE)[2]
+fileName <- 'household_power_consumption.txt'
 library(data.table)
 power <- fread(input = fileName, sep = ';', na.strings = '?')
 power[, DateTime := as.POSIXct(paste(Date, Time), format = "%d/%m/%Y %H:%M:%S")]
